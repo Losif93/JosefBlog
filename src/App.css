@@ -107,6 +107,26 @@ button:hover {
   transform: translateY(-2px);
 }
 
+input,
+textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  padding: 10px 12px;
+  font-size: 15px;
+  font-family: inherit;
+  background: #ffffff;
+  color: var(--ink);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
 .hero-card {
   background: var(--card);
   border: 1px solid rgba(31, 41, 51, 0.12);
@@ -318,6 +338,39 @@ button:hover {
   flex-direction: column;
   gap: 8px;
   text-align: right;
+}
+
+.admin {
+  gap: 40px;
+}
+
+.admin-main {
+  display: grid;
+  gap: 24px;
+}
+
+.admin-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px;
+  display: grid;
+  gap: 16px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.admin-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-status-text {
+  color: var(--muted);
 }
 
 @keyframes fade-in {

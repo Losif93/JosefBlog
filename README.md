@@ -22,6 +22,24 @@ npm install
 npm run dev
 ```
 
+## Admin backend (local)
+
+1) Copy `.env.example` to `.env` and set your admin credentials.
+2) Install backend dependencies (same `package.json`).
+3) Run the API server:
+
+```bash
+npm run dev:server
+```
+
+The API runs on `http://localhost:5174`. The admin UI lives at `http://localhost:5173/admin`.
+
+## Admin usage
+
+- Sign in at `/admin` with the credentials in `.env`.
+- Add stories, photos, and music from the form cards.
+- Content is stored in `db.sqlite` (ignored by git).
+
 ## Build
 
 ```bash
