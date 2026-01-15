@@ -490,6 +490,7 @@ function App() {
   const [stories, setStories] = useState(defaultStories)
   const [photos, setPhotos] = useState(() => buildDefaultPhotos())
   const [token, setToken] = useState('')
+  const [useDefaultPhotos, setUseDefaultPhotos] = useState(true)
 
   useEffect(() => {
     const storedToken = localStorage.getItem('adminToken')
@@ -529,6 +530,7 @@ function App() {
                 image_url: item.image_url
               }))
             )
+            setUseDefaultPhotos(false)
           }
         }
       } catch {
@@ -537,6 +539,14 @@ function App() {
     }
     load()
   }, [])
+
+  useEffect(() => {
+    if (!useDefaultPhotos) return
+    const interval = setInterval(() => {
+      setPhotos(buildDefaultPhotos())
+    }, 30000)
+    return () => clearInterval(interval)
+  }, [useDefaultPhotos])
 
   return (
     <Routes>
