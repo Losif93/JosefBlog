@@ -111,6 +111,10 @@ const formatDate = (value) => {
 }
 
 function Home({ stories, photos, music }) {
+  const [activePhoto, setActivePhoto] = useState(null)
+
+  const closePhoto = () => setActivePhoto(null)
+
   return (
     <div className="page">
       <header className="site-header">
@@ -177,13 +181,24 @@ function Home({ stories, photos, music }) {
           </div>
           <div className="photo-grid">
             {photos.map((photo) => (
-              <figure className="photo-tile" key={photo.title}>
+              <button
+                className="photo-tile"
+                key={photo.title}
+                type="button"
+                onClick={() =>
+                  setActivePhoto({
+                    title: photo.title,
+                    story: photo.story,
+                    image: photo.image || photo.image_url
+                  })
+                }
+              >
                 <img src={photo.image || photo.image_url} alt={photo.title} />
                 <figcaption className="photo-overlay">
                   <span>{photo.title}</span>
                   <p>{photo.story}</p>
                 </figcaption>
-              </figure>
+              </button>
             ))}
           </div>
         </section>
@@ -238,6 +253,21 @@ function Home({ stories, photos, music }) {
           <a href="#">Spotify</a>
         </div>
       </footer>
+
+      {activePhoto ? (
+        <div className="photo-modal" onClick={closePhoto}>
+          <div className="photo-modal-card" onClick={(event) => event.stopPropagation()}>
+            <img src={activePhoto.image} alt={activePhoto.title} />
+            <div className="photo-modal-body">
+              <h3>{activePhoto.title}</h3>
+              <p>{activePhoto.story}</p>
+              <button className="ghost" type="button" onClick={closePhoto}>
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   )
 }

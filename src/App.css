@@ -213,6 +213,9 @@ label {
   position: relative;
   overflow: hidden;
   background: rgba(251, 250, 247, 0.8);
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
 .photo-tile img {
@@ -249,6 +252,47 @@ label {
 
 .photo-tile:hover img {
   transform: scale(1.04);
+}
+
+.photo-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 18, 20, 0.65);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  z-index: 20;
+}
+
+.photo-modal-card {
+  max-width: 420px;
+  width: 100%;
+  background: var(--card);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+  display: grid;
+}
+
+.photo-modal-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.photo-modal-body {
+  padding: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.photo-modal-body h3 {
+  margin: 0;
+}
+
+.photo-modal-body p {
+  margin: 0;
+  color: var(--muted);
 }
 
 .music-grid {
