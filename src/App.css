@@ -19,7 +19,7 @@
   top: 0;
   z-index: 10;
   padding: 16px 0;
-  background: linear-gradient(180deg, rgba(252, 246, 238, 0.98), rgba(252, 246, 238, 0.7));
+  background: linear-gradient(180deg, rgba(246, 244, 239, 0.98), rgba(246, 244, 239, 0.7));
   backdrop-filter: blur(8px);
 }
 
@@ -92,14 +92,14 @@ button {
 }
 
 .primary {
-  background: var(--accent);
-  color: #fef7ef;
-  box-shadow: 0 12px 20px rgba(140, 92, 62, 0.2);
+  background: var(--accent-strong);
+  color: #f5f7f4;
+  box-shadow: 0 12px 20px rgba(46, 92, 76, 0.2);
 }
 
 .ghost {
   background: transparent;
-  border: 1px solid rgba(89, 70, 58, 0.2);
+  border: 1px solid var(--line);
   color: var(--ink);
 }
 
@@ -108,11 +108,11 @@ button:hover {
 }
 
 .hero-card {
-  background: rgba(255, 250, 244, 0.92);
-  border: 1px solid rgba(140, 92, 62, 0.15);
+  background: var(--card);
+  border: 1px solid rgba(31, 41, 51, 0.12);
   padding: 24px;
   border-radius: 24px;
-  box-shadow: 0 18px 32px rgba(140, 92, 62, 0.12);
+  box-shadow: 0 18px 32px rgba(31, 41, 51, 0.12);
   animation: float-in 700ms ease 120ms both;
 }
 
@@ -134,7 +134,7 @@ button:hover {
   font-size: 12px;
   padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(140, 92, 62, 0.08);
+  background: rgba(46, 92, 76, 0.08);
   color: var(--ink);
 }
 
@@ -161,16 +161,16 @@ button:hover {
 }
 
 .thought-card {
-  background: rgba(255, 251, 246, 0.85);
+  background: var(--card);
   border-radius: 18px;
   padding: 20px;
-  border: 1px solid rgba(140, 92, 62, 0.1);
+  border: 1px solid var(--line);
   transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
 .thought-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 20px rgba(140, 92, 62, 0.12);
+  box-shadow: 0 12px 20px rgba(31, 41, 51, 0.12);
 }
 
 .thought-meta {
@@ -192,7 +192,7 @@ button:hover {
   border-radius: 18px;
   position: relative;
   overflow: hidden;
-  background: rgba(255, 250, 244, 0.6);
+  background: rgba(251, 250, 247, 0.8);
 }
 
 .photo-tile img {
@@ -212,8 +212,8 @@ button:hover {
   gap: 6px;
   padding: 14px;
   font-size: 13px;
-  color: #f9f3ec;
-  background: linear-gradient(0deg, rgba(74, 55, 44, 0.75), rgba(74, 55, 44, 0));
+  color: #f5f7f4;
+  background: linear-gradient(0deg, rgba(31, 41, 51, 0.75), rgba(31, 41, 51, 0));
 }
 
 .photo-overlay span {
@@ -223,7 +223,7 @@ button:hover {
 
 .photo-overlay p {
   margin: 0;
-  color: rgba(249, 243, 236, 0.9);
+  color: rgba(245, 247, 244, 0.9);
   font-size: 13px;
 }
 
@@ -240,8 +240,8 @@ button:hover {
 .music-card {
   border-radius: 20px;
   padding: 20px;
-  background: rgba(255, 248, 240, 0.9);
-  border: 1px solid rgba(140, 92, 62, 0.12);
+  background: var(--card);
+  border: 1px solid var(--line);
 }
 
 .music-top {
@@ -265,8 +265,8 @@ button:hover {
   margin-top: 16px;
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(140, 92, 62, 0.2);
-  background: #f2e7db;
+  border: 1px solid rgba(31, 41, 51, 0.2);
+  background: #eef1ed;
 }
 
 .music-embed iframe {
@@ -280,13 +280,13 @@ button:hover {
   border-radius: 999px;
   padding: 8px 14px;
   font-size: 14px;
-  background: rgba(140, 92, 62, 0.1);
+  background: rgba(46, 92, 76, 0.1);
   color: var(--ink);
 }
 
 .progress {
   height: 6px;
-  background: rgba(140, 92, 62, 0.1);
+  background: rgba(46, 92, 76, 0.12);
   border-radius: 999px;
   margin-top: 18px;
   overflow: hidden;
@@ -296,14 +296,14 @@ button:hover {
   display: block;
   width: 65%;
   height: 100%;
-  background: linear-gradient(90deg, #b98059, #e1b995);
+  background: linear-gradient(90deg, #3a6b5b, #a7c0b7);
 }
 
 .footer {
   display: flex;
   justify-content: space-between;
   gap: 24px;
-  border-top: 1px solid rgba(140, 92, 62, 0.15);
+  border-top: 1px solid var(--line);
   padding-top: 32px;
   color: var(--muted);
 }
