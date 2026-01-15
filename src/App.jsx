@@ -161,7 +161,8 @@ function App() {
               {
                 title: 'Sultans of Swing',
                 artist: 'Dire Straits',
-                mood: 'A clean guitar line that never leaves.'
+                mood: 'A clean guitar line that never leaves.',
+                embed: 'https://www.youtube.com/embed/0fAQhSRLQnM'
               },
               {
                 title: 'City Rain',
@@ -183,6 +184,17 @@ function App() {
                   <button className="play">Play</button>
                 </div>
                 <p className="music-mood">{track.mood}</p>
+                {track.embed ? (
+                  <div className="music-embed">
+                    <iframe
+                      src={track.embed}
+                      title={`${track.title} by ${track.artist}`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    />
+                  </div>
+                ) : null}
                 <div className="progress">
                   <span />
                 </div>

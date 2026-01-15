@@ -261,6 +261,21 @@ button:hover {
   color: var(--muted);
 }
 
+.music-embed {
+  margin-top: 16px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(140, 92, 62, 0.2);
+  background: #f2e7db;
+}
+
+.music-embed iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
 .play {
   border-radius: 999px;
   padding: 8px 14px;
