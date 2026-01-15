@@ -79,12 +79,69 @@ function App() {
             <p>Fragments of places, people, and pauses.</p>
           </div>
           <div className="photo-grid">
-            {Array.from({ length: 9 }).map((_, index) => (
-              <div className="photo-tile" key={index}>
-                <div className="photo-overlay">
-                  <span>Moment {index + 1}</span>
-                </div>
-              </div>
+            {[
+              {
+                title: 'Coffee Window',
+                story: 'Steam fades on the glass, but the morning stays.',
+                image:
+                  'https://source.unsplash.com/featured/600x800?coffee&sig=1'
+              },
+              {
+                title: 'Warm Street',
+                story: 'A late sun turns every step into amber.',
+                image:
+                  'https://source.unsplash.com/featured/600x800?street&sig=2'
+              },
+              {
+                title: 'Quiet Room',
+                story: 'Books open, air still, time unhurried.',
+                image:
+                  'https://source.unsplash.com/featured/600x800?interior&sig=3'
+              },
+              {
+                title: 'Soft Shore',
+                story: 'Waves reach, retreat, and leave the day polished.',
+                image:
+                  'https://source.unsplash.com/featured/600x800?ocean&sig=4'
+              },
+              {
+                title: 'Evening Walk',
+                story: 'The city exhales as lights begin to bloom.',
+                image:
+                  'https://source.unsplash.com/featured/600x800?city,night&sig=5'
+              },
+              {
+                title: 'Rain Notes',
+                story: 'Pavement writes back everything the sky says.',
+                image:
+                  'https://source.unsplash.com/featured/600x800?rain&sig=6'
+              },
+              {
+                title: 'Green Pause',
+                story: 'Leaves hold a silence that feels like shelter.',
+                image:
+                  'https://source.unsplash.com/featured/600x800?forest&sig=7'
+              },
+              {
+                title: 'Golden Field',
+                story: 'Wind moves through grasses like a slow song.',
+                image:
+                  'https://source.unsplash.com/featured/600x800?field&sig=8'
+              },
+              {
+                title: 'Late Light',
+                story: 'A last glow settles on the day with grace.',
+                image:
+                  'https://source.unsplash.com/featured/600x800?sunset&sig=9'
+              }
+            ].map((photo) => (
+              <figure className="photo-tile" key={photo.title}>
+                <img src={photo.image} alt={photo.title} />
+                <figcaption className="photo-overlay">
+                  <span>{photo.title}</span>
+                  <p>{photo.story}</p>
+                </figcaption>
+              </figure>
             ))}
           </div>
         </section>
@@ -100,6 +157,11 @@ function App() {
                 title: 'Warm Dawn',
                 artist: 'Elara & Co.',
                 mood: 'Slow, amber, morning.'
+              },
+              {
+                title: 'Sultans of Swing',
+                artist: 'Dire Straits',
+                mood: 'A clean guitar line that never leaves.'
               },
               {
                 title: 'City Rain',
