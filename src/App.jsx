@@ -22,86 +22,25 @@ const defaultStories = [
   }
 ]
 
-const defaultPhotos = [
-  {
-    title: 'Coffee Window',
-    story: 'Steam fades on the glass, but the morning stays.',
-    image:
-      'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80'
-  },
-  {
-    title: 'Warm Street',
-    story: 'A late sun turns every step into amber.',
-    image:
-      'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=800&q=80'
-  },
-  {
-    title: 'Quiet Room',
-    story: 'Books open, air still, time unhurried.',
-    image:
-      'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80'
-  },
-  {
-    title: 'Soft Shore',
-    story: 'Waves reach, retreat, and leave the day polished.',
-    image:
-      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80'
-  },
-  {
-    title: 'Evening Walk',
-    story: 'The city exhales as lights begin to bloom.',
-    image:
-      'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80'
-  },
-  {
-    title: 'Rain Notes',
-    story: 'Pavement writes back everything the sky says.',
-    image:
-      'https://images.unsplash.com/photo-1428592953211-077101b2021b?auto=format&fit=crop&w=800&q=80'
-  },
-  {
-    title: 'Green Pause',
-    story: 'Leaves hold a silence that feels like shelter.',
-    image:
-      'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80'
-  },
-  {
-    title: 'Golden Field',
-    story: 'Wind moves through grasses like a slow song.',
-    image:
-      'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80'
-  },
-  {
-    title: 'Late Light',
-    story: 'A last glow settles on the day with grace.',
-    image:
-      'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80'
-  }
-]
-
-const defaultMusic = [
-  {
-    title: 'Warm Dawn',
-    artist: 'Elara & Co.',
-    mood: 'Slow, amber, morning.'
-  },
-  {
-    title: 'Sultans of Swing',
-    artist: 'Dire Straits',
-    mood: 'A clean guitar line that never leaves.',
-    embed: 'https://www.youtube.com/embed/0fAQhSRLQnM'
-  },
-  {
-    title: 'City Rain',
-    artist: 'Iones',
-    mood: 'Muted streets, soft synths.'
-  },
-  {
-    title: 'Golden Hour Notes',
-    artist: 'Plainview',
-    mood: 'Guitar sketches and brass.'
-  }
-]
+const buildDefaultPhotos = () => {
+  const seed = Date.now()
+  const topics = [
+    ['Coffee Window', 'coffee', 'Steam fades on the glass, but the morning stays.'],
+    ['Warm Street', 'street', 'A late sun turns every step into amber.'],
+    ['Quiet Room', 'interior', 'Books open, air still, time unhurried.'],
+    ['Soft Shore', 'ocean', 'Waves reach, retreat, and leave the day polished.'],
+    ['Evening Walk', 'city,night', 'The city exhales as lights begin to bloom.'],
+    ['Rain Notes', 'rain', 'Pavement writes back everything the sky says.'],
+    ['Green Pause', 'forest', 'Leaves hold a silence that feels like shelter.'],
+    ['Golden Field', 'field', 'Wind moves through grasses like a slow song.'],
+    ['Late Light', 'sunset', 'A last glow settles on the day with grace.']
+  ]
+  return topics.map(([title, topic, story], index) => ({
+    title,
+    story,
+    image: `https://source.unsplash.com/featured/800x1000?${topic}&sig=${seed + index}`
+  }))
+}
 
 const formatDate = (value) => {
   if (!value) return ''
@@ -110,7 +49,7 @@ const formatDate = (value) => {
   return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 }
 
-function Home({ stories, photos, music }) {
+function Home({ stories, photos }) {
   const [activePhoto, setActivePhoto] = useState(null)
 
   const closePhoto = () => setActivePhoto(null)
@@ -122,7 +61,6 @@ function Home({ stories, photos, music }) {
         <nav className="nav">
           <a href="#thoughts">Thoughts</a>
           <a href="#photos">Photos</a>
-          <a href="#music">Music</a>
           <a href="#about">About</a>
           <Link to="/admin">Admin</Link>
         </nav>
@@ -203,40 +141,6 @@ function Home({ stories, photos, music }) {
           </div>
         </section>
 
-        <section id="music" className="section">
-          <div className="section-head">
-            <h2>Music embeds</h2>
-            <p>Small sets to play while reading or wandering.</p>
-          </div>
-          <div className="music-grid">
-            {music.map((track) => (
-              <article className="music-card" key={track.title}>
-                <div className="music-top">
-                  <div>
-                    <h3>{track.title}</h3>
-                    <p className="music-artist">{track.artist}</p>
-                  </div>
-                  <button className="play">Play</button>
-                </div>
-                <p className="music-mood">{track.mood}</p>
-                {track.embed ? (
-                  <div className="music-embed">
-                    <iframe
-                      src={track.embed}
-                      title={`${track.title} by ${track.artist}`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
-                    />
-                  </div>
-                ) : null}
-                <div className="progress">
-                  <span />
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
       </main>
 
       <footer id="about" className="footer">
@@ -584,8 +488,7 @@ function Admin({ token, onTokenChange }) {
 
 function App() {
   const [stories, setStories] = useState(defaultStories)
-  const [photos, setPhotos] = useState(defaultPhotos)
-  const [music, setMusic] = useState(defaultMusic)
+  const [photos, setPhotos] = useState(() => buildDefaultPhotos())
   const [token, setToken] = useState('')
 
   useEffect(() => {
@@ -606,10 +509,9 @@ function App() {
   useEffect(() => {
     const load = async () => {
       try {
-        const [storyRes, photoRes, musicRes] = await Promise.all([
+        const [storyRes, photoRes] = await Promise.all([
           fetch(`${API_BASE}/api/stories`),
-          fetch(`${API_BASE}/api/photos`),
-          fetch(`${API_BASE}/api/music`)
+          fetch(`${API_BASE}/api/photos`)
         ])
         if (storyRes.ok) {
           const data = await storyRes.json()
@@ -629,19 +531,6 @@ function App() {
             )
           }
         }
-        if (musicRes.ok) {
-          const data = await musicRes.json()
-          if (data.length) {
-            setMusic(
-              data.map((item) => ({
-                title: item.title,
-                artist: item.artist,
-                mood: item.mood,
-                embed: item.embed_url || ''
-              }))
-            )
-          }
-        }
       } catch {
         // Keep defaults if API is unavailable.
       }
@@ -653,7 +542,7 @@ function App() {
     <Routes>
       <Route
         path="/"
-        element={<Home stories={stories} photos={photos} music={music} />}
+        element={<Home stories={stories} photos={photos} />}
       />
       <Route
         path="/admin"
