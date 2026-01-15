@@ -26,47 +26,56 @@ const defaultPhotos = [
   {
     title: 'Coffee Window',
     story: 'Steam fades on the glass, but the morning stays.',
-    image: 'https://source.unsplash.com/featured/600x800?coffee&sig=1'
+    image:
+      'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80'
   },
   {
     title: 'Warm Street',
     story: 'A late sun turns every step into amber.',
-    image: 'https://source.unsplash.com/featured/600x800?street&sig=2'
+    image:
+      'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=800&q=80'
   },
   {
     title: 'Quiet Room',
     story: 'Books open, air still, time unhurried.',
-    image: 'https://source.unsplash.com/featured/600x800?interior&sig=3'
+    image:
+      'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80'
   },
   {
     title: 'Soft Shore',
     story: 'Waves reach, retreat, and leave the day polished.',
-    image: 'https://source.unsplash.com/featured/600x800?ocean&sig=4'
+    image:
+      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80'
   },
   {
     title: 'Evening Walk',
     story: 'The city exhales as lights begin to bloom.',
-    image: 'https://source.unsplash.com/featured/600x800?city,night&sig=5'
+    image:
+      'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80'
   },
   {
     title: 'Rain Notes',
     story: 'Pavement writes back everything the sky says.',
-    image: 'https://source.unsplash.com/featured/600x800?rain&sig=6'
+    image:
+      'https://images.unsplash.com/photo-1428592953211-077101b2021b?auto=format&fit=crop&w=800&q=80'
   },
   {
     title: 'Green Pause',
     story: 'Leaves hold a silence that feels like shelter.',
-    image: 'https://source.unsplash.com/featured/600x800?forest&sig=7'
+    image:
+      'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80'
   },
   {
     title: 'Golden Field',
     story: 'Wind moves through grasses like a slow song.',
-    image: 'https://source.unsplash.com/featured/600x800?field&sig=8'
+    image:
+      'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80'
   },
   {
     title: 'Late Light',
     story: 'A last glow settles on the day with grace.',
-    image: 'https://source.unsplash.com/featured/600x800?sunset&sig=9'
+    image:
+      'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80'
   }
 ]
 
